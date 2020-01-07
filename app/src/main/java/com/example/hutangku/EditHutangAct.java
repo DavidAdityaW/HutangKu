@@ -59,6 +59,7 @@ public class EditHutangAct extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Data successfully delete", Toast.LENGTH_SHORT).show();
                             Intent a = new Intent(EditHutangAct.this,MainActivity.class);
                             startActivity(a);
+                            finish();
                         } else {
                             Toast.makeText(getApplicationContext(),"Failure!", Toast.LENGTH_SHORT).show();
                         }
@@ -86,6 +87,7 @@ public class EditHutangAct extends AppCompatActivity {
 
                         Intent a = new Intent(EditHutangAct.this, MainActivity.class);
                         startActivity(a);
+                        finish();
                     }
 
                     @Override
@@ -96,5 +98,12 @@ public class EditHutangAct extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent a = new Intent(EditHutangAct.this,MainActivity.class);
+        startActivity(a);
+        finish();
     }
 }

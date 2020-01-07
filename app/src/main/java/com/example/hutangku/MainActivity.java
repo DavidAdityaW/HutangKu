@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent a = new Intent(MainActivity.this,NewHutangAct.class);
                 startActivity(a);
+                finish();
             }
         });
 
@@ -89,5 +90,12 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No data", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent a = new Intent(MainActivity.this,DashboardAct.class);
+        startActivity(a);
+        finish();
     }
 }

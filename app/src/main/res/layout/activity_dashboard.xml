@@ -30,7 +30,7 @@
         android:layout_marginLeft="16dp" />
     
     <TextView
-        android:id="@+id/day"
+        android:id="@+id/mDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -43,7 +43,7 @@
         android:layout_marginLeft="18dp" />
 
     <TextView
-        android:id="@+id/nameuser"
+        android:id="@+id/mWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -52,20 +52,20 @@
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/day"
+        app:layout_constraintTop_toBottomOf="@+id/mDay"
         android:layout_marginLeft="17dp" />
 
     <TextView
-        android:id="@+id/date"
+        android:id="@+id/mDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="40dp"
         android:text="Date"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/day"
+        app:layout_constraintLeft_toRightOf="@+id/mDay"
         android:layout_marginLeft="18dp" />
     
     <LinearLayout
@@ -118,7 +118,7 @@
                     android:id="@+id/hutang"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hutang"
+                    android:text="Debt"
                     android:textColor="#172646"
                     android:textSize="15sp" />
 
@@ -142,6 +142,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/imageViewPiutang"
                     android:layout_marginBottom="8dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -151,7 +152,7 @@
                     android:id="@+id/piutang"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Piutang"
+                    android:text="Credit"
                     android:textColor="#172646"
                     android:textSize="15sp" />
 
@@ -175,6 +176,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/imageViewPengaturan"
                     android:layout_marginBottom="8dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -198,6 +200,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/imageViewTeamApps"
                     android:layout_marginBottom="8dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -218,7 +221,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageViewGuide"
         android:layout_width="154dp"
         android:layout_height="154dp"
         android:layout_marginEnd="8dp"
@@ -243,7 +246,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewGuide" />
 
     <TextView
         android:id="@+id/pagesubtitle"
@@ -261,5 +264,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pagetitile" />
 
+    <Button
+        android:id="@+id/btnguide"
+        android:background="@drawable/bgbtnguide"
+        android:layout_width="194dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:text="Guide Me"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pagesubtitle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

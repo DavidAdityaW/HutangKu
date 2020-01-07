@@ -69,6 +69,7 @@ public class NewHutangAct extends AppCompatActivity {
 
                         Intent a = new Intent(NewHutangAct.this, MainActivity.class);
                         startActivity(a);
+                        finish();
                     }
 
                     @Override
@@ -85,6 +86,7 @@ public class NewHutangAct extends AppCompatActivity {
                 // Back to MainActivity
                 Intent a = new Intent(NewHutangAct.this, MainActivity.class);
                 startActivity(a);
+                finish();
             }
         });
 
@@ -110,5 +112,12 @@ public class NewHutangAct extends AppCompatActivity {
 //        btnSaveDebt.setTypeface(MMedium);
 //        btnCancelDebt.setTypeface(MLight);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent a = new Intent(NewHutangAct.this,MainActivity.class);
+        startActivity(a);
+        finish();
     }
 }
