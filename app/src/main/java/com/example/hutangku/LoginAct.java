@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 
 public class LoginAct extends AppCompatActivity {
 
-    Button btnLogin;
+    Button btnLogin, btnSignUp;
     RelativeLayout rellay1, rellay2;
 
     Handler handler = new Handler();
@@ -34,6 +34,7 @@ public class LoginAct extends AppCompatActivity {
         handler.postDelayed(runnable, 2000); //2000 is the timeout for the splash
 
         btnLogin = findViewById(R.id.btnLogin);
+        btnSignUp = findViewById(R.id.btnSignUp);
 
         // Button btnLogin diklik
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +42,16 @@ public class LoginAct extends AppCompatActivity {
             public void onClick(View v) {
                 Intent a = new Intent(LoginAct.this,DashboardAct.class);
                 startActivity(a);
+                finish();
+            }
+        });
+
+        // Button btnSignUp diklik
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent b = new Intent(LoginAct.this,RegisterActivity.class);
+                startActivity(b);
                 finish();
             }
         });
