@@ -31,7 +31,7 @@ public class LoginAct extends AppCompatActivity {
         rellay1 = (RelativeLayout) findViewById(R.id.rellay1);
         rellay2 = (RelativeLayout) findViewById(R.id.rellay2);
 
-        handler.postDelayed(runnable, 2000); //2000 is the timeout for the splash
+        handler.postDelayed(runnable, 2000); // 2000 is the timeout for the splash
 
         btnLogin = findViewById(R.id.btnLogin);
         btnSignUp = findViewById(R.id.btnSignUp);
@@ -50,7 +50,7 @@ public class LoginAct extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent b = new Intent(LoginAct.this,RegisterActivity.class);
+                Intent b = new Intent(LoginAct.this, RegisterAct.class);
                 startActivity(b);
                 finish();
             }

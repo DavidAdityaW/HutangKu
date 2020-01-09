@@ -103,16 +103,16 @@ public class DashboardAct extends AppCompatActivity {
         // Customize font
 //        nameuser.setTypeface(MMedium);
 //        walletuser.setTypeface(MLight);
-//
+
 //        mainmenus.setTypeface(MRegular);
-//
+
 //        hutang.setTypeface(MMedium);
 //        piutang.setTypeface(MMedium);
 //        pengaturan.setTypeface(MMedium);
 //        teamapps.setTypeface(MMedium);
 
 //        btnguide.setTypeface(MMedium);
-//
+
 //        pagetitle.setTypeface(MRegular);
 //        pagesubtitle.setTypeface(MLight);
 
@@ -155,7 +155,6 @@ public class DashboardAct extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
     @Override

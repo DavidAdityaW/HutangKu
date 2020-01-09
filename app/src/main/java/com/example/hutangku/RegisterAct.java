@@ -9,10 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterAct extends AppCompatActivity {
 
     RelativeLayout rellay3;
-    Button btnBack;
     Handler h = new Handler();
     Runnable r = new Runnable() {
         @Override
@@ -27,19 +26,12 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         rellay3 = (RelativeLayout) findViewById(R.id.rellay3);
-        btnBack = findViewById(R.id.btnBack);
+    }
 
-        // Button btnBack diklik
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent c = new Intent(RegisterActivity.this,LoginAct.class);
-                startActivity(c);
-                finish();
-            }
-        });
-
-
-
+    @Override
+    public void onBackPressed() {
+        Intent a = new Intent(RegisterAct.this,LoginAct.class);
+        startActivity(a);
+        finish();
     }
 }

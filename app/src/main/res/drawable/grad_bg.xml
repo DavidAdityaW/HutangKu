@@ -5,6 +5,6 @@
         android:angle="90"
         android:endColor="@color/gradStop"
         android:startColor="@color/gradStart"
-        android:type="linear"/>
+        android:type="linear" />
 
 </shape>

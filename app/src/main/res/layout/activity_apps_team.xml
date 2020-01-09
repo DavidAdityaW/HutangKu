@@ -6,39 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".AppsTeamAct">
 
+    <View
+        android:background="@drawable/bgheader"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:background="@drawable/logout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/myPict"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/userpic" />
-
-    <TextView
-        android:id="@+id/tvMy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/myPict"
-        android:textSize="20sp"
-        android:layout_marginTop="5dp"
-        android:text="David Aditya Winarto"
-        android:gravity="center" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/myPict2"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="150dp"
         android:layout_marginTop="100dp"
-        android:layout_below="@id/myPict"
         android:src="@drawable/userpic" />
 
     <TextView
-        android:id="@+id/tvMy2"
+        android:id="@+id/myName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/myPict2"
+        android:layout_below="@id/myPict"
         android:textSize="20sp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="David Aditya Winarto"
         android:gravity="center" />
+
+    <Button
+        android:id="@+id/btnEditProfile"
+        android:background="@drawable/bgbtnguide"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:text="Save Profile"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp" />
 
 </RelativeLayout>

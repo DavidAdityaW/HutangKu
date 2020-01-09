@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@drawable/grad_bg"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterAct">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -21,7 +21,7 @@
             android:layout_height="80dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_money"/>
+            android:src="@drawable/ic_money" />
 
         <RelativeLayout
             android:id="@+id/rellay3"
@@ -38,7 +38,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:textSize="30sp"
                 android:textColor="@color/white"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp" />
 
             <LinearLayout
                 android:id="@+id/form1"
@@ -62,7 +62,7 @@
                         android:textAllCaps="true"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-light"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
 
                     <EditText
                         android:layout_width="match_parent"
@@ -73,29 +73,7 @@
                         android:fontFamily="sans-serif-light"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-                        android:background="@drawable/et_bg"/>
-
-                    <TextView
-                        android:layout_marginTop="20dp"
-                        android:layout_below="@+id/tv_register"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="username"
-                        android:textAllCaps="true"
-                        android:textSize="15sp"
-                        android:fontFamily="sans-serif-light"
-                        android:textColor="@color/white"/>
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="5dp"
-                        android:textSize="15sp"
-                        android:textColor="@color/white"
-                        android:fontFamily="sans-serif-light"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:background="@drawable/et_bg"/>
+                        android:background="@drawable/et_bg" />
 
                     <TextView
                         android:layout_marginTop="20dp"
@@ -106,7 +84,7 @@
                         android:textAllCaps="true"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-light"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
 
                     <EditText
                         android:layout_width="match_parent"
@@ -117,7 +95,7 @@
                         android:fontFamily="sans-serif-light"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-                        android:background="@drawable/et_bg"/>
+                        android:background="@drawable/et_bg" />
 
                     <TextView
                         android:layout_marginTop="20dp"
@@ -128,7 +106,7 @@
                         android:textAllCaps="true"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-light"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
 
                     <EditText
                         android:layout_width="match_parent"
@@ -139,7 +117,7 @@
                         android:fontFamily="sans-serif-light"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-                        android:background="@drawable/et_bg"/>
+                        android:background="@drawable/et_bg" />
 
                     <TextView
                         android:layout_marginTop="20dp"
@@ -150,7 +128,7 @@
                         android:textAllCaps="true"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-light"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
 
                     <EditText
                         android:layout_width="match_parent"
@@ -161,8 +139,9 @@
                         android:fontFamily="sans-serif-light"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-                        android:background="@drawable/et_bg"/>
+                        android:background="@drawable/et_bg" />
                 </LinearLayout>
+
             </LinearLayout>
 
             <Button
@@ -178,30 +157,10 @@
                 android:paddingRight="70dp"
                 android:paddingLeft="70dp"
                 android:layout_centerHorizontal="true"
-                android:textSize="16sp"/>
-
-            <Button
-                android:id="@+id/btnBack"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_below="@+id/btnRegister"
-                android:layout_marginTop="5dp"
-                android:text="Back"
-                android:background="@drawable/btn_bg"
-                android:textColor="@color/white"
-                android:fontFamily="sans-serif-medium"
-                android:paddingRight="70dp"
-                android:paddingLeft="70dp"
-                android:layout_centerHorizontal="true"
-                android:textSize="16sp"/>
-
-
-
+                android:textSize="16sp" />
 
         </RelativeLayout>
+
     </RelativeLayout>
-
-
-
 
 </RelativeLayout>

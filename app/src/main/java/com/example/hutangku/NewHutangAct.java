@@ -99,13 +99,13 @@ public class NewHutangAct extends AppCompatActivity {
 
 //        addname.setTypeface(MLight);
 //        namahutang.setTypeface(MMedium);
-//
+
 //        addamount.setTypeface(MLight);
 //        jumlahhutang.setTypeface(MMedium);
-//
+
 //        adddesc.setTypeface(MLight);
 //        deskripsihutang.setTypeface(MMedium);
-//
+
 //        adddate.setTypeface(MLight);
 //        tanggalhutang.setTypeface(MMedium);
 

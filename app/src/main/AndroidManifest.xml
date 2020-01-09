@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterAct" />
         <activity android:name=".LoginAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,26 +22,10 @@
         <activity android:name=".SettingsAct" />
         <activity android:name=".AppsTeamAct" />
         <activity android:name=".MainActivity2" />
-        <activity android:name=".DashboardAct">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
+        <activity android:name=".DashboardAct" />
         <activity android:name=".EditHutangAct" />
         <activity android:name=".NewHutangAct" />
-        <activity android:name=".MainActivity">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

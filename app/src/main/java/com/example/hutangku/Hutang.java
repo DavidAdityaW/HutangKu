@@ -21,7 +21,7 @@ public class Hutang {
         this.keyhutang = keyhutang;
     }
 
-    // Getter and Setter
+    // Getter and setter
     public String getKeyhutang() {
         return keyhutang;
     }

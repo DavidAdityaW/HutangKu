@@ -73,5 +73,4 @@ public class HutangAdapter extends RecyclerView.Adapter<HutangAdapter.MyViewHold
             tanggal = itemView.findViewById(R.id.tanggal);
         }
     }
-
 }
