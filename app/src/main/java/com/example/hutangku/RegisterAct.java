@@ -23,7 +23,7 @@ public class RegisterAct extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     Button btnRegister;
-    private EditText etEmail, etPassword;
+    private EditText etEmail, etPassword, etName;
 
     RelativeLayout rellay3;
     Handler h = new Handler();
@@ -46,11 +46,13 @@ public class RegisterAct extends AppCompatActivity {
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
 
+
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
+                String nama = etName.getText().toString();
 
                 if (username.equals("")) {
                     Toast.makeText(RegisterAct.this, "Silahkan isi username Anda",
@@ -82,6 +84,15 @@ public class RegisterAct extends AppCompatActivity {
                 }
             }
         });
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent b = new Intent(RegisterAct.this, LoginAct.class);
+                    startActivity(b);
+                    finish();
+            }
+        });
     }
 
     @Override
@@ -97,4 +108,8 @@ public class RegisterAct extends AppCompatActivity {
         startActivity(a);
         finish();
     }
+
+
+
+
 }
