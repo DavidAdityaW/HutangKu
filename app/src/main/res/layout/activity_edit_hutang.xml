@@ -93,7 +93,7 @@
 
             <EditText
                 android:id="@+id/jumlahhutang"
-                android:inputType="text"
+                android:inputType="number"
                 android:background="@drawable/bginputtask"
                 android:paddingLeft="12dp"
                 android:textColorHint="#B5B5B5"
@@ -154,7 +154,7 @@
 
             <EditText
                 android:id="@+id/tanggalhutang"
-                android:inputType="text"
+                android:inputType="date"
                 android:background="@drawable/bginputtask"
                 android:paddingLeft="12dp"
                 android:textColorHint="#B5B5B5"

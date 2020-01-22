@@ -127,7 +127,7 @@
                     android:textSize="12sp"
                     android:textColor="#FFFFFF"
                     android:layout_marginTop="3dp"
-                    android:text="500K"
+                    android:text="0"
                     android:background="@drawable/bgdeskripsi"
                     android:layout_width="wrap_content"
                     android:layout_height="18dp" />
@@ -161,7 +161,7 @@
                     android:textSize="12sp"
                     android:textColor="#FFFFFF"
                     android:layout_marginTop="3dp"
-                    android:text="100K"
+                    android:text="0"
                     android:background="@drawable/bgdeskripsi"
                     android:layout_width="wrap_content"
                     android:layout_height="18dp" />
@@ -210,7 +210,7 @@
                     android:id="@+id/teamapps"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Apps"
+                    android:text="Profile"
                     android:textColor="#172646"
                     android:textSize="15sp" />
 

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class HutangAdapter extends RecyclerView.Adapter<HutangAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<Hutang> hutang;
+    ArrayList<Hutang> hutang; // Hutang didapat dari model Hutang
 
     public HutangAdapter(Context c, ArrayList<Hutang> p) {
         context = c;

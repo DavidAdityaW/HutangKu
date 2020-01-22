@@ -3,10 +3,12 @@ package com.example.hutangku;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +19,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 import java.util.Random;
 
 public class NewHutangAct extends AppCompatActivity {
@@ -27,6 +33,7 @@ public class NewHutangAct extends AppCompatActivity {
     DatabaseReference reference;
     Integer hutangNum = new Random().nextInt(); // Id hutang
     String keyhutang = Integer.toString(hutangNum);
+    DatePickerDialog datePickerDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +55,31 @@ public class NewHutangAct extends AppCompatActivity {
         btnSaveDebt = findViewById(R.id.btnSaveDebt);
         btnCancelDebt = findViewById(R.id.btnCancelDebt);
 
+        tanggalhutang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar newCalendar = Calendar.getInstance();
+                DatePickerDialog datePickerDialog = new DatePickerDialog(NewHutangAct.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        Calendar newDate = Calendar.getInstance();
+                        newDate.set(year, monthOfYear, dayOfMonth);
+                        SimpleDateFormat dateFormatter = new SimpleDateFormat("d MMM yy", Locale.US);
+                        tanggalhutang.setText(dateFormatter.format(newDate.getTime()));
+                    }
+
+                },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+                datePickerDialog.show();
+            }
+        });
+
         btnSaveDebt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Insert data to firebase
                 reference = FirebaseDatabase.getInstance().getReference().child("HutangApp").
                         child("hutang" + hutangNum);
-                reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                reference.addListenerForSingleValueEvent(new ValueEventListener() { // Ketika ada perubahan data dibaca 1x
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         // Set and put the data in MainActivity

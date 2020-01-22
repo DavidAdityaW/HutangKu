@@ -4,27 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grad_bg"
+    android:background="#FFFFFF"
+    android:orientation="horizontal"
     tools:context=".SettingsAct">
 
-    <ImageView
-        android:id="@+id/imageViewSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/icstarter" />
-
-    <TextView
-        android:id="@+id/underconstruction"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageViewSettings"
-        android:textSize="30sp"
-        android:textColor="#FFFFFF"
-        android:layout_marginTop="10dp"
-        android:text="underconstruction!"
-        android:textAllCaps="false"
-        android:gravity="center" />
+        android:weightSum="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Settings"
+            android:textSize="22dp"
+            android:textColor="#000000"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:padding="16dp"
+            android:text="\tHelp"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:textColor="#818181"
+            android:background="#FFFFFF"
+            android:textAlignment="textStart"
+            android:drawableLeft="@drawable/ic_help_outline_black_24dp"
+            android:gravity="start" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:padding="16dp"
+            android:text="\tAbout"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:textColor="#818181"
+            android:background="#FFFFFF"
+            android:textAlignment="textStart"
+            android:drawableLeft="@drawable/ic_info_outline_black_24dp"
+            android:gravity="start" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
 </RelativeLayout>

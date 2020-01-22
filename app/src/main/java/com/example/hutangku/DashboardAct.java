@@ -1,5 +1,6 @@
 package com.example.hutangku;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,19 +15,28 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Map;
 
 public class DashboardAct extends AppCompatActivity {
 
-    TextView mDay, mWelcome, mDate, hutang, piutang, pengaturan, teamapps,
+    TextView mDay, mWelcome, mDate, hutang, totalhutang, piutang, pengaturan, teamapps,
             pagetitle, pagesubtitle;
 
     Button btnguide;
     Animation alfatogo, alfatogotwo, alfatogothree;
     ImageView imageViewHutang, imageViewPiutang, imageViewPengaturan, imageViewTeamApps, imageViewGuide;
+
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +48,7 @@ public class DashboardAct extends AppCompatActivity {
         alfatogothree = AnimationUtils.loadAnimation(this, R.anim.alfatogothree);
 
         hutang = findViewById(R.id.hutang);
+        totalhutang = findViewById(R.id.totalhutang);
         piutang = findViewById(R.id.piutang);
         pengaturan = findViewById(R.id.pengaturan);
         teamapps = findViewById(R.id.teamapps);
@@ -95,6 +106,29 @@ public class DashboardAct extends AppCompatActivity {
             mWelcome.setText("Good Night");
         }
 
+        // Get total hutang in Firebase
+        reference = FirebaseDatabase.getInstance().getReference().child("HutangApp");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int sum = 0;
+
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Map<String,Object> map = (Map<String,Object>) ds.getValue();
+                    Object jumlah = map.get("jumlah");
+                    int pValue = Integer.parseInt(String.valueOf(jumlah));
+                    sum += pValue;
+
+                    totalhutang.setText("Rp. " + String.valueOf(sum));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         // Import font
 //        Typeface MLight = Typeface.createFromAsset(getAssets(), "font/ml.ttf");
 //        Typeface MMedium = Typeface.createFromAsset(getAssets(), "font/mm.ttf");
@@ -146,7 +180,7 @@ public class DashboardAct extends AppCompatActivity {
             }
         });
 
-        // Klik ke TeamApps
+        // Klik ke Profile
         imageViewTeamApps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -155,6 +189,17 @@ public class DashboardAct extends AppCompatActivity {
                 finish();
             }
         });
+
+        // Klik ke Guide
+        btnguide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent a = new Intent(DashboardAct.this, PackageAct.class);
+                startActivity(a);
+                finish();
+            }
+        });
+
     }
 
     @Override
