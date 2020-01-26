@@ -6,20 +6,29 @@ public class Piutang {
     String deskripsipiutang;
     String tanggalpiutang;
     String jumlahpiutang;
+    String keypiutang;
 
     // Konstruktor tanpa parameter
     public Piutang() {
     }
 
     // Konstruktor dengan parameter
-    public Piutang(String namapiutang, String deskripsipiutang, String tanggalpiutang, String jumlahpiutang) {
+    public Piutang(String namapiutang, String deskripsipiutang, String tanggalpiutang, String jumlahpiutang, String keypiutang) {
         this.namapiutang = namapiutang;
         this.deskripsipiutang = deskripsipiutang;
         this.tanggalpiutang = tanggalpiutang;
         this.jumlahpiutang = jumlahpiutang;
+        this.keypiutang = keypiutang;
     }
 
     // Getter and setter
+    public String getKeypiutang() {
+        return keypiutang;
+    }
+
+    public void setKeypiutang(String keypiutang) { this.keypiutang = keypiutang;
+    }
+
     public String getNamapiutang() {
         return namapiutang;
     }

@@ -1,6 +1,7 @@
 package com.example.hutangku;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,27 @@ public class PiutangAdapter extends RecyclerView.Adapter<PiutangAdapter.MyViewHo
         myViewHolder.jumlahpiutang.setText(piutang.get(i).getJumlahpiutang());
         myViewHolder.deskripsipiutang.setText(piutang.get(i).getDeskripsipiutang());
         myViewHolder.tanggalpiutang.setText(piutang.get(i).getTanggalpiutang());
+
+        final String getNamapiutang = piutang.get(i).getNamapiutang();
+        final String getJumlahpiutang = piutang.get(i).getJumlahpiutang();
+        final String getDeskripsipiutang = piutang.get(i).getDeskripsipiutang();
+        final String getTanggalpiutang = piutang.get(i).getTanggalpiutang();
+        final String getKeypiutang = piutang.get(i).getKeypiutang();
+
+
+        // Bisa klik per data item piutang
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent aa = new Intent(context,EditPiutangAct.class);
+                aa.putExtra("namapiutang", getNamapiutang);
+                aa.putExtra("jumlahpiutang", getJumlahpiutang);
+                aa.putExtra("deskripsipiutang", getDeskripsipiutang);
+                aa.putExtra("tanggalpiutang", getTanggalpiutang);
+                aa.putExtra("keypiutang", getKeypiutang);
+                context.startActivity(aa);
+            }
+        });
     }
 
     @Override
@@ -42,7 +64,7 @@ public class PiutangAdapter extends RecyclerView.Adapter<PiutangAdapter.MyViewHo
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView namapiutang, jumlahpiutang, deskripsipiutang, tanggalpiutang;
+        TextView namapiutang, jumlahpiutang, deskripsipiutang, tanggalpiutang, keypiutang;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
