@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class DashboardAct extends AppCompatActivity {
 
-    TextView mDay, mWelcome, mDate, hutang, totalhutang, piutang, pengaturan, teamapps,
+    TextView mDay, mWelcome, mDate, hutang, totalhutang, piutang, totalpiutang, pengaturan, teamapps,
             pagetitle, pagesubtitle;
 
     Button btnguide;
@@ -50,6 +50,7 @@ public class DashboardAct extends AppCompatActivity {
         hutang = findViewById(R.id.hutang);
         totalhutang = findViewById(R.id.totalhutang);
         piutang = findViewById(R.id.piutang);
+        totalpiutang = findViewById(R.id.totalpiutang);
         pengaturan = findViewById(R.id.pengaturan);
         teamapps = findViewById(R.id.teamapps);
 
@@ -70,7 +71,7 @@ public class DashboardAct extends AppCompatActivity {
         pagesubtitle.startAnimation(alfatogotwo);
         btnguide.startAnimation(alfatogothree);
 
-        // Time now in Dashboard
+        // Get time now in DashboardAct
         mDay = findViewById(R.id.mDay);
         mWelcome = findViewById(R.id.mWelcome);
         mDate = findViewById(R.id.mDate);
@@ -106,7 +107,7 @@ public class DashboardAct extends AppCompatActivity {
             mWelcome.setText("Good Night");
         }
 
-        // Get total hutang in Firebase
+        // Get total hutang in firebase
         reference = FirebaseDatabase.getInstance().getReference().child("HutangApp");
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -129,6 +130,28 @@ public class DashboardAct extends AppCompatActivity {
             }
         });
 
+        // Get total piutang in firebase
+        reference = FirebaseDatabase.getInstance().getReference().child("PiutangApp");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int sum = 0;
+
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Map<String,Object> map = (Map<String,Object>) ds.getValue();
+                    Object jumlahpiutang = map.get("jumlahpiutang");
+                    int pValue = Integer.parseInt(String.valueOf(jumlahpiutang));
+                    sum += pValue;
+
+                    totalpiutang.setText("Rp. " + String.valueOf(sum));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
         // Import font

@@ -1,59 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:orientation="horizontal"
     tools:context=".SettingsAct">
 
-    <LinearLayout
+    <View
+        android:id="@+id/viewPackage"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="@drawable/bgheader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="Settings"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/notifikasi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="1"
-        android:orientation="vertical">
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="32dp"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:textColor="#818181"
+        android:text="\tNotifikasi"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/ic_notifications_none_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewPackage"
+        android:gravity="start" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Settings"
-            android:textSize="22dp"
-            android:textColor="#000000"/>
+    <TextView
+        android:id="@+id/help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:textColor="#818181"
+        android:text="\tHelp"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/ic_help_outline_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notifikasi"
+        android:gravity="start" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:padding="16dp"
-            android:text="\tHelp"
-            android:textSize="16sp"
-            android:textAllCaps="false"
-            android:textColor="#818181"
-            android:background="#FFFFFF"
-            android:textAlignment="textStart"
-            android:drawableLeft="@drawable/ic_help_outline_black_24dp"
-            android:gravity="start" />
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:textColor="#818181"
+        android:text="\tAbout"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/ic_info_outline_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/help"
+        android:gravity="start" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:padding="16dp"
-            android:text="\tAbout"
-            android:textSize="16sp"
-            android:textAllCaps="false"
-            android:textColor="#818181"
-            android:background="#FFFFFF"
-            android:textAlignment="textStart"
-            android:drawableLeft="@drawable/ic_info_outline_black_24dp"
-            android:gravity="start" />
+    <TextView
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:textColor="#818181"
+        android:text="\tProfile"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about"
+        android:gravity="start" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:textColor="#818181"
+        android:text="\tLogout"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/ic_power_settings_new_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile"
+        android:gravity="start" />
 
-    </LinearLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

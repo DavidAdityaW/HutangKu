@@ -6,10 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class AppsTeamAct extends AppCompatActivity {
 
     Button btnLogout;
+    TextView myName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +23,9 @@ public class AppsTeamAct extends AppCompatActivity {
         setContentView(R.layout.activity_apps_team);
 
         btnLogout = findViewById(R.id.btnLogout);
+        myName = findViewById(R.id.myName);
 
-        // Klik logout
+        // Logout
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,6 +34,9 @@ public class AppsTeamAct extends AppCompatActivity {
                 finish();
             }
         });
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        myName.setText(user.getEmail());
     }
 
     @Override

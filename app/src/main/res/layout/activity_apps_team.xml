@@ -34,38 +34,38 @@
         android:layout_marginTop="100dp"
         android:src="@drawable/userpic" />
 
-    <!--<TextView-->
-        <!--android:id="@+id/myName"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@id/myPict"-->
-        <!--android:textSize="20sp"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:text="David Aditya Winarto"-->
-        <!--android:gravity="center" />-->
-
-    <LinearLayout
-        android:layout_marginTop="250dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:orientation="vertical"
+    <TextView
+        android:id="@+id/myName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/myPict"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:text="David Aditya Winarto"
+        android:gravity="center" />
 
-        <EditText
-            android:id="@+id/myname"
-            android:inputType="text"
-            android:paddingLeft="12dp"
-            android:textColorHint="#B5B5B5"
-            android:textColor="#000000"
-            android:hint="Nama User"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:layout_below="@id/myPict"
-            android:layout_width="match_parent"
-            android:layout_height="55dp" />
+    <!--<LinearLayout-->
+        <!--android:layout_marginTop="250dp"-->
+        <!--android:layout_marginRight="80dp"-->
+        <!--android:layout_marginLeft="80dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
 
-    </LinearLayout>
+        <!--<EditText-->
+            <!--android:id="@+id/myName"-->
+            <!--android:inputType="text"-->
+            <!--android:paddingLeft="12dp"-->
+            <!--android:textColorHint="#B5B5B5"-->
+            <!--android:textColor="#000000"-->
+            <!--android:hint="Nama User"-->
+            <!--android:textSize="16sp"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_below="@id/myPict"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="55dp" />-->
+
+    <!--</LinearLayout>-->
 
     <Button
         android:id="@+id/btnEditProfile"

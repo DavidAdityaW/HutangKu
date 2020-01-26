@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#F4F4F4"
     android:orientation="vertical"
-    tools:context=".NewHutangAct">
+    tools:context=".NewPiutangAct">
 
     <LinearLayout
         android:orientation="vertical"
@@ -44,16 +44,16 @@
         android:paddingTop="22dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        
+
         <LinearLayout
             android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            
+
             <TextView
-                android:id="@+id/addname"
+                android:id="@+id/addnamepiutang"
                 android:textSize="18sp"
                 android:textColor="#000000"
                 android:text="Add Name"
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content" />
 
             <EditText
-                android:id="@+id/namahutang"
+                android:id="@+id/namapiutang"
                 android:inputType="text"
                 android:background="@drawable/bginputtask"
                 android:paddingLeft="12dp"
@@ -71,7 +71,7 @@
                 android:hint="What is his/her name?"
                 android:layout_width="match_parent"
                 android:layout_height="55dp" />
-            
+
         </LinearLayout>
 
         <LinearLayout
@@ -83,7 +83,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/addamount"
+                android:id="@+id/addamountpiutang"
                 android:textSize="18sp"
                 android:textColor="#000000"
                 android:text="Add Amount"
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content" />
 
             <EditText
-                android:id="@+id/jumlahhutang"
+                android:id="@+id/jumlahpiutang"
                 android:inputType="number"
                 android:background="@drawable/bginputtask"
                 android:paddingLeft="12dp"
@@ -113,7 +113,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/adddesc"
+                android:id="@+id/adddescpiutang"
                 android:textSize="18sp"
                 android:textColor="#000000"
                 android:text="Description"
@@ -122,7 +122,7 @@
                 android:layout_height="wrap_content" />
 
             <EditText
-                android:id="@+id/deskripsihutang"
+                android:id="@+id/deskripsipiutang"
                 android:inputType="text"
                 android:background="@drawable/bginputtask"
                 android:paddingLeft="12dp"
@@ -144,7 +144,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/adddate"
+                android:id="@+id/adddatepiutang"
                 android:textSize="18sp"
                 android:textColor="#000000"
                 android:text="Timeline"
@@ -153,7 +153,7 @@
                 android:layout_height="wrap_content" />
 
             <EditText
-                android:id="@+id/tanggalhutang"
+                android:id="@+id/tanggalpiutang"
                 android:inputType="date"
                 android:background="@drawable/bginputtask"
                 android:paddingLeft="12dp"
@@ -168,7 +168,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnSaveDebt"
+        android:id="@+id/btnSaveCredit"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="20dp"
@@ -181,7 +181,7 @@
         android:layout_height="55dp" />
 
     <Button
-        android:id="@+id/btnCancelDebt"
+        android:id="@+id/btnCancelCredit"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="12dp"

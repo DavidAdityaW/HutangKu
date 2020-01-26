@@ -43,7 +43,6 @@ public class LoginAct extends AppCompatActivity {
         rellay1 = (RelativeLayout) findViewById(R.id.rellay1);
         rellay2 = (RelativeLayout) findViewById(R.id.rellay2);
 
-        mAuth = FirebaseAuth.getInstance();
         etUsername = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
 
@@ -52,17 +51,8 @@ public class LoginAct extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnSignUp = findViewById(R.id.btnSignUp);
 
-        // Button btnLogin diklik
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               Intent a = new Intent(LoginAct.this,DashboardAct.class);
-                startActivity(a);
-                finish();
-           }
-        });
+        mAuth = FirebaseAuth.getInstance();
 
-//        Button btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,15 +60,16 @@ public class LoginAct extends AppCompatActivity {
                 String password = etPassword.getText().toString();
 
                 if (username.equals("")) {
-                    Toast.makeText(LoginAct.this, "Silahkan input username Anda",
+                    Toast.makeText(LoginAct.this, "Silahkan isi username Anda",
                             Toast.LENGTH_SHORT).show();
+                    etUsername.requestFocus();
 
                 }else if (password.equals("")) {
-                    Toast.makeText(LoginAct.this, "Silahkan input password Anda",
+                    Toast.makeText(LoginAct.this, "Silahkan isi password Anda",
                             Toast.LENGTH_SHORT).show();
+                    etPassword.requestFocus();
 
                 }else {
-
                     mAuth.signInWithEmailAndPassword(username, password)
                             .addOnCompleteListener(LoginAct.this, new OnCompleteListener<AuthResult>() {
                                 @Override
@@ -88,20 +79,23 @@ public class LoginAct extends AppCompatActivity {
 //                                    Log.d(TAG, "createUserWithEmail:success");
                                         FirebaseUser user = mAuth.getCurrentUser();
 
-                                        Toast.makeText(LoginAct.this, "Authentication success.",
+                                        Toast.makeText(LoginAct.this, "Welcome " +user.getEmail(),
                                                 Toast.LENGTH_SHORT).show();
+
+                                        Intent a = new Intent(LoginAct.this,DashboardAct.class);
+                                        startActivity(a);
+                                        finish();
 
                                     } else {
                                         // If sign in fails, display a message to the user.
 //                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                        Toast.makeText(LoginAct.this, "Authentication failed.",
+                                        Toast.makeText(LoginAct.this, "Login failed",
                                                 Toast.LENGTH_SHORT).show();
                                     }
 
                                     // ...
                                 }
                             });
-
                 }
             }
         });
@@ -115,8 +109,8 @@ public class LoginAct extends AppCompatActivity {
                 finish();
             }
         });
-
     }
+
     @Override
     public void onStart() {
         super.onStart();

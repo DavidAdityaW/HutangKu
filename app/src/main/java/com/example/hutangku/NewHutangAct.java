@@ -55,6 +55,7 @@ public class NewHutangAct extends AppCompatActivity {
         btnSaveDebt = findViewById(R.id.btnSaveDebt);
         btnCancelDebt = findViewById(R.id.btnCancelDebt);
 
+        // Datetimepicker
         tanggalhutang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

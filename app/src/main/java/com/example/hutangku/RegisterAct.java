@@ -23,7 +23,7 @@ public class RegisterAct extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     Button btnRegister;
-    private EditText etEmail, etPassword, etName;
+    private EditText etEmail, etPassword, etNama;
 
     RelativeLayout rellay3;
     Handler h = new Handler();
@@ -41,25 +41,32 @@ public class RegisterAct extends AppCompatActivity {
 
         rellay3 = (RelativeLayout) findViewById(R.id.rellay3);
 
-        mAuth = FirebaseAuth.getInstance();
         btnRegister = findViewById(R.id.btnRegister);
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
+        etNama = findViewById(R.id.et_nama);
 
+        mAuth = FirebaseAuth.getInstance();
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
-                String nama = etName.getText().toString();
+                String nama = etNama.getText().toString();
 
-                if (username.equals("")) {
-                    Toast.makeText(RegisterAct.this, "Silahkan isi username Anda",
+                if (nama.equals("")) {
+                    Toast.makeText(RegisterAct.this, "Silahkan isi nama anda",
                             Toast.LENGTH_SHORT).show();
+                    etNama.requestFocus();
+                } else if (username.equals("")) {
+                    Toast.makeText(RegisterAct.this, "Silahkan isi username anda",
+                            Toast.LENGTH_SHORT).show();
+                    etEmail.requestFocus();
                 } else if (password.equals("")) {
-                    Toast.makeText(RegisterAct.this, "Silahkan isi password Anda",
+                    Toast.makeText(RegisterAct.this, "Silahkan isi password anda",
                             Toast.LENGTH_SHORT).show();
+                    etPassword.requestFocus();
                 } else {
                     mAuth.createUserWithEmailAndPassword(username, password)
                             .addOnCompleteListener(RegisterAct.this, new OnCompleteListener<AuthResult>() {
@@ -69,12 +76,17 @@ public class RegisterAct extends AppCompatActivity {
                                         // Sign in success, update UI with the signed-in user's information
 //                                    Log.d(TAG, "createUserWithEmail:success");
                                         FirebaseUser user = mAuth.getCurrentUser();
-                                        Toast.makeText(RegisterAct.this, "Authentication success.",
+
+                                        Toast.makeText(RegisterAct.this, "Register success",
                                                 Toast.LENGTH_SHORT).show();
+
+                                        Intent a = new Intent(RegisterAct.this,LoginAct.class);
+                                        startActivity(a);
+                                        finish();
                                     } else {
                                         // If sign in fails, display a message to the user.
 //                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                        Toast.makeText(RegisterAct.this, "Authentication failed.",
+                                        Toast.makeText(RegisterAct.this, "Register failed",
                                                 Toast.LENGTH_SHORT).show();
                                     }
 
@@ -82,15 +94,6 @@ public class RegisterAct extends AppCompatActivity {
                                 }
                             });
                 }
-            }
-        });
-
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    Intent b = new Intent(RegisterAct.this, LoginAct.class);
-                    startActivity(b);
-                    finish();
             }
         });
     }
@@ -108,8 +111,4 @@ public class RegisterAct extends AppCompatActivity {
         startActivity(a);
         finish();
     }
-
-
-
-
 }
