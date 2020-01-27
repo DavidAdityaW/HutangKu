@@ -12,6 +12,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -56,9 +58,11 @@ public class EditPiutangAct extends AppCompatActivity {
         btnSaveUpdateCredit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                reference = FirebaseDatabase.getInstance().getReference().child("HutangKu").child("Piutang" + keykeypiutang);
                 reference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                         // Set and put the data after edit in MainActivity
                         dataSnapshot.getRef().child("namapiutang").setValue(namaPiutang.getText().toString());
                         dataSnapshot.getRef().child("jumlahpiutang").setValue(jumlahPiutang.getText().toString());
@@ -77,6 +81,23 @@ public class EditPiutangAct extends AppCompatActivity {
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
 
+                    }
+                });
+            }
+        });
+
+        btnDeleteCredit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reference.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Intent a = new Intent(EditPiutangAct.this,MainActivity2.class);
+                            startActivity(a);
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Deleting has failed", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
             }

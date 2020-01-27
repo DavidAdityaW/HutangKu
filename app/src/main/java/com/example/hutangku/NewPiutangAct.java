@@ -31,6 +31,7 @@ public class NewPiutangAct extends AppCompatActivity {
     Button btnSaveCredit, btnCancelCredit;
     DatabaseReference reference;
     Integer piutangNum = new Random().nextInt(); // Id piutang
+    String keypiutang = Integer.toString(piutangNum);
     DatePickerDialog datePickerDialog;
 
     @Override
@@ -86,6 +87,7 @@ public class NewPiutangAct extends AppCompatActivity {
                         dataSnapshot.getRef().child("jumlahpiutang").setValue(jumlahpiutang.getText().toString());
                         dataSnapshot.getRef().child("deskripsipiutang").setValue(deskripsipiutang.getText().toString());
                         dataSnapshot.getRef().child("tanggalpiutang").setValue(tanggalpiutang.getText().toString());
+                        dataSnapshot.getRef().child("keypiutang").setValue(keypiutang);
 
                         // Show the data in MainActivity2
                         Toast.makeText(getApplicationContext(), "Data successfully added", Toast.LENGTH_SHORT).show();
