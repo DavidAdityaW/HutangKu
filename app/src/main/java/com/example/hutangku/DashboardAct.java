@@ -224,7 +224,6 @@ public class DashboardAct extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
     @Override

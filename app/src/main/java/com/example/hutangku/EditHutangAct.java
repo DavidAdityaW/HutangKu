@@ -122,7 +122,6 @@ public class EditHutangAct extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
-
     }
 
     @Override

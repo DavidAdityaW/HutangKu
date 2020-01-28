@@ -137,7 +137,6 @@ public class NewHutangAct extends AppCompatActivity {
 
 //        btnSaveDebt.setTypeface(MMedium);
 //        btnCancelDebt.setTypeface(MLight);
-
     }
 
     @Override

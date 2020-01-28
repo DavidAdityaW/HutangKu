@@ -31,7 +31,7 @@
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
-            android:layout_below="@+id/imgViewLogo"/>
+            android:layout_below="@+id/imgViewLogo" />
 
         <TextView
             android:id="@+id/appversion"
@@ -44,7 +44,7 @@
             android:textColor="#FFFFFF"
             android:textAlignment="center"
             android:text="V 1.0"
-            android:layout_below="@id/appname"/>
+            android:layout_below="@id/appname" />
 
     </RelativeLayout>
 

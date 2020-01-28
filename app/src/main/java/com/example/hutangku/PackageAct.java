@@ -92,7 +92,6 @@ public class PackageAct extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
     @Override

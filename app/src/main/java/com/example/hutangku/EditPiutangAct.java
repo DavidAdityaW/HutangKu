@@ -58,7 +58,6 @@ public class EditPiutangAct extends AppCompatActivity {
         btnSaveUpdateCredit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                reference = FirebaseDatabase.getInstance().getReference().child("HutangKu").child("Piutang" + keykeypiutang);
                 reference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -121,7 +120,6 @@ public class EditPiutangAct extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
-
     }
 
     @Override

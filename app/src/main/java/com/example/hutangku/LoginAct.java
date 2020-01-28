@@ -1,19 +1,24 @@
 package com.example.hutangku;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,7 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginAct extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    Button btnLogin, btnSignUp;
+    Button btnLogin, btnSignUp, btnForgot;
     RelativeLayout rellay1, rellay2;
     private EditText etUsername, etPassword;
 
@@ -50,6 +55,7 @@ public class LoginAct extends AppCompatActivity {
 
         btnLogin = findViewById(R.id.btnLogin);
         btnSignUp = findViewById(R.id.btnSignUp);
+        btnForgot = findViewById(R.id.btnForgot);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -107,6 +113,74 @@ public class LoginAct extends AppCompatActivity {
                 Intent b = new Intent(LoginAct.this, RegisterAct.class);
                 startActivity(b);
                 finish();
+            }
+        });
+
+        // Button btnForgot diklik
+        btnForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showRecoverPasswordDialog();
+            }
+        });
+    }
+
+    private void showRecoverPasswordDialog() {
+        // AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Recover Password");
+
+        // Set layout linear layout
+        LinearLayout linearLayout = new LinearLayout(this);
+        // View to set in dialog
+        final EditText etEmail = new EditText(this);
+        etEmail.setHint("Email");
+        etEmail.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+        etEmail.setMinEms(16);
+
+        linearLayout.addView(etEmail);
+        linearLayout.setPadding(20, 10, 20, 10);
+
+        builder.setView(linearLayout);
+
+        // Buttons recover
+        builder.setPositiveButton("Recover", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Input email
+                String email = etEmail.getText().toString().trim();
+                beginRecovery(email);
+            }
+        });
+//        // Buttons cancel
+//        builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                // Dismiss dialog
+//                dialog.dismiss();
+//            }
+//        });
+
+        // Show dialog
+        builder.create().show();
+    }
+
+    private void beginRecovery(String email) {
+        mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(LoginAct.this, "Email send", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(LoginAct.this, "Failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                // Get and show error message
+                Toast.makeText(LoginAct.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
